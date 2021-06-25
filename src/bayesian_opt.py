@@ -54,7 +54,7 @@ if __name__ == "__main__":
     ].values
     target = df["Target"].values
 
-    # define a parameter space
+    # define the range of input values to test the Bayes_op to create prop-distribution
     param_space = [
         space.Integer(50, 300, name="n_estimators"),
         space.Integer(4, 24, name="max_depth"),
@@ -71,11 +71,11 @@ if __name__ == "__main__":
         "min_samples_leaf",
         "max_features",
     ]
-    # using functool partial, you create new function
+    # define the loss function to minimize (acc will be negative)
     optimization_function = partial(
         optimize, param_names=param_names, x=features, y=target
     )
-    # initiate gp_minimize for Bayesian Optimization
+    # initiate gp_minimize for Bayesian Optimization to select the best input values
     result = gp_minimize(
         optimization_function,
         dimensions=param_space,
