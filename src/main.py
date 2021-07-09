@@ -40,15 +40,15 @@ def optimization_parameters():
         cv=5,
     )
 
-    # model = RandomizedSearchCV(
-    #     estimator=rfc,
-    #     param_distributions=param_distributions,
-    #     n_iter=20,
-    #     scoring='accuracy',
-    #     verbose=10,
-    #     n_jobs=1,
-    #     cv=5,
-    # )
+    model = RandomizedSearchCV(
+        estimator=rfc,
+        param_distributions=param_distributions,
+        n_iter=20,
+        scoring='accuracy',
+        verbose=10,
+        n_jobs=1,
+        cv=5,
+    )
 
     model.fit(x_train, y_train)
     y_pred = model.predict(x_test)
