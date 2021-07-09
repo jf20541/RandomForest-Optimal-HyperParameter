@@ -60,7 +60,6 @@ Best parameters set:
   min_samples_leaf: 12
   min_samples_split: 5
 ```
-
 ### Code
 Created 5 modules
 - `main.py`: Initiated RandomSearchCV and GridSearchCV for optimal parameters
