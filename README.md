@@ -9,12 +9,12 @@ Random Forest: A meta estimator that fits a number of decision tree classifiers 
 Bayes Optimization uses probability to find the min function. It finds the input value to a function which outputs the lowest value. The model often tends to performance better and use less processing power.
 
 ## Parameters
-- n_estimators [int]: number of decision trees in the Random Forest model
-- criterion {“gini”, “entropy”}: measures the quality of split (information gain) 
-- max_depth [int]: max depth of the tree
-- min_samples_split [int]: min number of samples required to split an internal node
-- min_samples_leaf [int]: min number of samples required to be at a leaf node
-- max_features {“auto”, “log2”, "sqrt"}: number of features to consider when looking for the best split
+- ```n_estimators:``` number of decision trees in the Random Forest model
+- ```criterion {“gini”, “entropy”}:``` measures the quality of split (information gain) 
+- ```max_depth:``` max depth of the tree
+- ```min_samples_split:``` min number of samples required to split an internal node
+- ```min_samples_leaf:``` min number of samples required to be at a leaf node
+- ```max_features {“auto”, “log2”, "sqrt"}:``` number of features to consider when looking for the best split
 
 ## Metric
 ![](https://latex.codecogs.com/gif.latex?Accuracy%3D%5Cfrac%7Btp&plus;tn%7D%7B%28tp%20&plus;%20tn%29&plus;%28fp-fn%29%29%7D)\
@@ -25,10 +25,15 @@ fn = False Negative
 
 ## Output
 ```bash
-Bayesian Optimization Gaussian Process
+Bayesian Optimization Gaussian Process: 70.96%
 
-Current minimum: -0.7096 = 70.96%
-{'n_estimators': 131, 'max_depth': 16, 'criterion': 'gini', 'min_samples_split': 14, 'min_samples_leaf': 22, 'max_features': 0.9502885825330616}
+Best parameters set:
+  n_estimators: 131
+  criterion: gini
+  max_depth: 16
+  max_features: 0.9502885825330616
+  min_samples_leaf: 22
+  min_samples_split: 14
 ```
 ```bash
 RandomForestClassifier with RandomSearchCV: 75.00%
@@ -42,14 +47,6 @@ Best parameters set:
   min_samples_split: 15
 ```
 ```bash
-Defined Parameters 
-
-Random Forest Classifier Accuracy Score: 70.75%
-  n_estimators:100
-  criterion: gini
-  max_depth: 10
-```
-```bash
 RandomForestClassifier with GridSearchCV: 74.36%
 
 Best parameters set:
@@ -59,6 +56,14 @@ Best parameters set:
   max_features: log2
   min_samples_leaf: 12
   min_samples_split: 5
+```
+```bash
+Defined Parameters 
+
+Random Forest Classifier Accuracy Score: 70.75%
+  n_estimators:100
+  criterion: gini
+  max_depth: 10
 ```
 ### Code
 Created 5 modules
