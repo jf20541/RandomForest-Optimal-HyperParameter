@@ -16,7 +16,8 @@ Bayes Optimization uses probability to find the min function. It finds the input
 - ```min_samples_leaf:``` min number of samples required to be at a leaf node
 - ```max_features {“auto”, “log2”, "sqrt"}:``` number of features to consider when looking for the best split
 
-## Metric
+## Metric & Mathematics
+
 ![](https://latex.codecogs.com/gif.latex?Accuracy%3D%5Cfrac%7Btp&plus;tn%7D%7B%28tp%20&plus;%20tn%29&plus;%28fp-fn%29%29%7D)\
 tp = True Positive\
 tn = True Negative\
@@ -66,7 +67,6 @@ Random Forest Classifier Accuracy Score: 70.75%
   max_depth: 10
 ```
 ### Code
-Created 5 modules
 - `main.py`: Initiated RandomSearchCV and GridSearchCV for optimal parameters
 - `train.py`: Initiated Bayesian Optimization using Gaussian Process and initiate StratefiedKFold
 - `model.py`: Initiated RandomForest Classifier with defined parameters and evaluated
