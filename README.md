@@ -18,7 +18,7 @@ Bayes Optimization uses probability to find the min function. It finds the input
 
 ## Metric & Mathematics
 
-![](https://latex.codecogs.com/gif.latex?Accuracy%3D%5Cfrac%7Btp&plus;tn%7D%7B%28tp%20&plus;%20tn%29&plus;%28fp-fn%29%29%7D)\
+![](https://latex.codecogs.com/gif.latex?%5Cdpi%7B200%7D%20%5Cfn_phv%20Accuracy%20%3D%20%5Cfrac%7Btp%20&plus;%20tn%7D%7B%28tp&plus;tn%29%20&plus;%20%28fp-fn%29%7D)\
 tp = True Positive\
 tn = True Negative\
 fp = False Positive\
