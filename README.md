@@ -66,13 +66,20 @@ Random Forest Classifier Accuracy Score: 70.75%
   criterion: gini
   max_depth: 10
 ```
-### Code
-- `main.py`: Initiated RandomSearchCV and GridSearchCV for optimal parameters
-- `train.py`: Initiated Bayesian Optimization using Gaussian Process and initiate StratefiedKFold
-- `model.py`: Initiated RandomForest Classifier with defined parameters and evaluated
-- `grid_dispatcher.py`: Defined dictionary with keys that are names of model and values are models themselves
-- `features.py`: Calculated RSI, MACD, MA50, MA200, 14-low, 14-high, Stochastic Oscillator, Signal MACD, %K 
-- `config.py`: Defined file paths as global variable
+## Repository File Structure
+    ├── src          
+    │   ├── main.py              # Initiated RandomSearchCV and GridSearchCV for optimal parameters
+    │   ├── train.py             # Initiated Bayesian Optimization using Gaussian Process and initiate StratefiedKFold
+    │   ├── model.py             # Initiated RandomForest Classifier with defined parameters and evaluated
+    │   ├── grid_dispatcher.py   # Defined dictionary with keys that are names of model and values are models themselves
+    │   ├── features.py          # Calculated RSI, MACD, MA50, MA200, 14-low, 14-high, Stochastic Oscillator, Signal MACD, %K
+    │   └── config.py            # Define path as global variable
+    ├── inputs
+    │   └── train.csv            # Adj-Closing Price for SPY
+    ├── plot
+    │   └── plot.png             # ROC Curve RandomForest Classifier
+    ├── requierments.txt         # Packages used for project
+    └── README.md
 
 ### Run
 In a terminal or command window, navigate to the top-level project directory `RandomForestHyperParameter/` (that contains this README) and run the following command:
