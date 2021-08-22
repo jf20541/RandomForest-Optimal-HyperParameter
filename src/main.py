@@ -39,23 +39,27 @@ def optimization_parameters():
         n_jobs=1,
         cv=5,
     )
-
+    # initiates Randomized Search
     model = RandomizedSearchCV(
         estimator=rfc,
         param_distributions=param_distributions,
         n_iter=20,
-        scoring='accuracy',
+        scoring="accuracy",
         verbose=10,
         n_jobs=1,
         cv=5,
     )
 
+    # fit and predict the model
     model.fit(x_train, y_train)
-    y_pred = model.predict(x_test)
-    acc = accuracy_score(y_test, y_pred) * 100
+    pred = model.predict(x_test)
+
+    # define evaluation metric as accuracy score
+    acc = accuracy_score(y_test, pred) * 100
     print(f"RandomForestClassifier with GridSearchCV: {acc:0.2f}%")
     print("Best parameters set:")
 
+    # extract best parameters
     best_parameters = model.best_estimator_.get_params()
     for param_name in sorted(param_grid.keys()):
         print(f"\t{param_name}: {best_parameters[param_name]}")

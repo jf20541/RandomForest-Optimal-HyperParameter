@@ -17,10 +17,11 @@ def train():
         criterion="gini",
         max_depth=10,
     )
-
+    # fit and predict the model
     model.fit(x_train, y_train)
     pred = model.predict(x_test)
 
+    # define evaluation metric as accuracy score
     acc = accuracy_score(y_test, pred) * 100
 
     # Evalute RandomForest Classifier
@@ -30,12 +31,14 @@ def train():
         target_names=[1, 0],
         output_dict=True,
     )
+    # convert the report into a pandas DataFrame
     eval_model = pd.DataFrame(report)
     print(f"Random Forest Classifier Accuracy Score: {acc:0.2f}%")
     print(eval_model)
 
 
 def roc_curve():
+    # plot ROC-curve
     roc = plot_roc_curve(model, x_test, y_test, alpha=0.8, name="ROC Curve", lw=1)
     plt.title("ROC Curve RandomForest Classifier with Defined Parameters")
     plt.savefig(config.MODEL_ROC)
@@ -44,10 +47,12 @@ def roc_curve():
 
 if __name__ == "__main__":
     df = pd.read_csv(config.TRAINING_FILE)
+    # define features and target values
     features = df[
         ["RSI", "50MA", "200MA", "14-high", "14-low", "%K", "SC", "MACD", "Signal_MACD"]
     ].values
     target = df["Target"].values
+    # split the data 80% training and 20 testing
     x_train, x_test, y_train, y_test = train_test_split(
         features, target, test_size=0.20
     )

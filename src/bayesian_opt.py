@@ -26,9 +26,9 @@ def optimize(params, param_names, x, y):
     # initiate RandomForestClassifie and K-fold (5)
     model = RandomForestClassifier(**params)
     kf = StratifiedKFold(n_splits=5)
-    acc = []
 
-    # loop over kfolds
+    # loop over kfolds and create empty list for accuracy
+    acc = []
     for idx in kf.split(X=x, y=y):
         train_idx, test_idx = idx[0], idx[1]
         xtrain = x[train_idx]
@@ -49,6 +49,7 @@ def optimize(params, param_names, x, y):
 
 if __name__ == "__main__":
     df = pd.read_csv(config.TRAINING_FILE)
+    # define features and target values
     features = df[
         ["RSI", "50MA", "200MA", "14-high", "14-low", "%K", "SC", "MACD", "Signal_MACD"]
     ].values
