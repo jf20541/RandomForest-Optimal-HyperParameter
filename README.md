@@ -8,17 +8,24 @@ Random Forest: A meta estimator that fits a number of decision tree classifiers 
 
 Bayes Optimization uses probability to find the min function. It finds the input value to a function which outputs the lowest value. The model often tends to performance better and use less processing power.
 
-## Parameters
-- ```n_estimators:``` number of decision trees in the Random Forest model
-- ```criterion {“gini”, “entropy”}:``` measures the quality of split (information gain) 
-- ```max_depth:``` max depth of the tree
-- ```min_samples_split:``` min number of samples required to split an internal node
-- ```min_samples_leaf:``` min number of samples required to be at a leaf node
-- ```max_features {“auto”, “log2”, "sqrt"}:``` number of features to consider when looking for the best split
+## Repository File Structure
+    ├── src          
+    │   ├── main.py              # Initiated RandomSearchCV and GridSearchCV for optimal parameters
+    │   ├── train.py             # Initiated Bayesian Optimization using Gaussian Process and initiate StratefiedKFold
+    │   ├── model.py             # Initiated RandomForest Classifier with defined parameters and evaluated
+    │   ├── grid_dispatcher.py   # Defined dictionary with keys that are names of model and values are models themselves
+    │   ├── features.py          # Calculated RSI, MACD, MA50, MA200, 14-low, 14-high, Stochastic Oscillator, Signal MACD, %K
+    │   └── config.py            # Define path as global variable
+    ├── inputs
+    │   └── train.csv            # Adj-Closing Price for SPY
+    ├── plot
+    │   └── plot.png             # ROC Curve RandomForest Classifier
+    ├── requierments.txt         # Packages used for project
+    └── README.md
 
 ## Metric & Mathematics
 
-![](https://latex.codecogs.com/gif.latex?Accuracy%3D%5Cfrac%7Btp&plus;tn%7D%7B%28tp%20&plus;%20tn%29&plus;%28fp-fn%29%29%7D)\
+![](https://latex.codecogs.com/gif.latex?%5Cdpi%7B200%7D%20%5Cfn_phv%20Accuracy%20%3D%20%5Cfrac%7Btp%20&plus;%20tn%7D%7B%28tp&plus;tn%29%20&plus;%20%28fp-fn%29%7D)\
 tp = True Positive\
 tn = True Negative\
 fp = False Positive\
@@ -66,19 +73,13 @@ Random Forest Classifier Accuracy Score: 70.75%
   criterion: gini
   max_depth: 10
 ```
-### Code
-- `main.py`: Initiated RandomSearchCV and GridSearchCV for optimal parameters
-- `train.py`: Initiated Bayesian Optimization using Gaussian Process and initiate StratefiedKFold
-- `model.py`: Initiated RandomForest Classifier with defined parameters and evaluated
-- `grid_dispatcher.py`: Defined dictionary with keys that are names of model and values are models themselves
-- `features.py`: Calculated RSI, MACD, MA50, MA200, 14-low, 14-high, Stochastic Oscillator, Signal MACD, %K 
-- `config.py`: Defined file paths as global variable
-
-### Run
-In a terminal or command window, navigate to the top-level project directory `RandomForestHyperParameter/` (that contains this README) and run the following command:
-```bash
-pip install --upgrade pip && pip install -r requirements.txt
-``` 
+## Parameters
+- ```n_estimators:``` number of decision trees in the Random Forest model
+- ```criterion {“gini”, “entropy”}:``` measures the quality of split (information gain) 
+- ```max_depth:``` max depth of the tree
+- ```min_samples_split:``` min number of samples required to split an internal node
+- ```min_samples_leaf:``` min number of samples required to be at a leaf node
+- ```max_features {“auto”, “log2”, "sqrt"}:``` number of features to consider when looking for the best split
 
 ## Data
 ```bash
