@@ -96,7 +96,3 @@ SC             float64
 MACD           float64
 Signal_MACD    float64
 ```
-## Sources
-https://scikit-optimize.github.io/stable/modules/classes.html
-https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html
-https://latex.codecogs.com/eqneditor/editor.php
