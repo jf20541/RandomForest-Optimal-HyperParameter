@@ -1,7 +1,7 @@
 # RandomForest-Optimal-HyperParameter
 
 ## Objective
-Supervised Learning (Classification Problem), Using an ensembled model which uses (n_estimators) to improve performance, avoids over-fitting, and finds optimal hyper-parameters using GridSearchCV, RandomSearchCV, and Bayesian Optimization using Gaussian Process. Calculated 9 market indicators based on S&P 500 Index (SPY) OHLC Price to predict the Target Binary values (0,1) as negative and positive values for the Adjusted Closing Price Change, respectively.
+Supervised Learning (Classification Problem), Using an ensemble model which uses (n_estimators) to improve performance, avoids over-fitting, and finds optimal hyper-parameters using GridSearchCV, RandomSearchCV, and Bayesian Optimization using Gaussian Process. Calculated 9 market indicators based on S&P 500 Index (SPY) OHLC Price to predict the Target Binary values (0,1) as negative and positive values for the Adjusted Closing Price Change, respectively.
 
 ## Model
 Random Forest: A meta estimator that fits a number of decision tree classifiers on various sub-samples of the dataset and uses averaging to improve the predictive accuracy and control over-fitting.
